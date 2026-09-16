@@ -25,18 +25,53 @@ import {
 import {
   MembersPage,
 } from "@/pages/members/members-page";
+import {
+  CreateMemberPage,
+} from "@/pages/members/create-member-page";
+import {
+  EditMemberPage,
+} from "@/pages/members/edit-member-page";
+
 
 import {
   MembershipsPage,
-} from "@/pages/memberships/memberships-page";
+} from "@/features/memberships/pages/memberships-page";
+import {
+  CreateMembershipPage,
+} from "@/features/memberships/pages/create-membership-page";
+import {
+  MembershipDetailsPage,
+} from "@/features/memberships/pages/membership-details-page";
+
+
 
 import {
   MembershipPlansPage,
-} from "@/pages/memberships/membership-plans-page";
+} from "@/features/membership-plans/pages/membership-plans-page";
+import {
+  CreateMembershipPlanPage,
+} from "@/features/membership-plans/pages/create-membership-plan-page";
+
+import {
+  MembershipPlanDetailsPage,
+} from "@/features/membership-plans/pages/membership-plan-details-page";
+
+import {
+  EditMembershipPlanPage,
+} from "@/features/membership-plans/pages/edit-membership-plan-page";
 
 import {
   TrainersPage,
-} from "@/pages/trainers/trainers-page";
+} from "@/features/trainers/pages/trainers-page";
+import {
+  CreateTrainerPage,
+} from "@/features/trainers/pages/create-trainer-page";
+import {
+  TrainerDetailsPage,
+} from "@/features/trainers/pages/trainer-details-page";
+import {
+  TrainerEditPage,
+} from "@/features/trainers/pages/trainer-edit-page";
 
 import {
   ClassesPage,
@@ -60,7 +95,10 @@ import {
 
 import {
   PaymentsPage,
-} from "@/pages/payments/payments-page";
+} from "@/features/payments/pages/payments-page";
+import {
+  PaymentVerificationPage,
+} from "@/features/payments/pages/payment-verification-page";
 
 import {
   NotificationsPage,
@@ -95,6 +133,8 @@ import {
 } from "@/pages/users/edit-user-page";
 
 
+
+
 export const appRoutes: RouteObject = {
   element: <ProtectedRoute />,
 
@@ -126,6 +166,16 @@ export const appRoutes: RouteObject = {
           element: <MembersPage />,
         },
         {
+          path: "members/new",
+          element: <CreateMemberPage />,
+        },
+        {
+          path: "members/:id/edit",
+          element: <EditMemberPage />,
+        },
+
+
+        {
           path: "members/:id",
           element: <MemberDetailsPage />,
         },
@@ -134,15 +184,53 @@ export const appRoutes: RouteObject = {
           path: "memberships",
           element: <MembershipsPage />,
         },
+        {
+          path: "memberships/new",
+          element: <CreateMembershipPage />,
+        },
+        {
+          path: "memberships/:id",
+          element: <MembershipDetailsPage />,
+        },
+
+
+
 
         {
           path: "membership-plans",
           element: <MembershipPlansPage />,
         },
+        {
+          path: "membership-plans/new",
+          element: <CreateMembershipPlanPage />,
+        },
+        {
+          path: "membership-plans/:id",
+          element: <MembershipPlanDetailsPage />,
+        },
+        {
+          path: "membership-plans/:id/edit",
+          element: <EditMembershipPlanPage />,
+        },
+
+
+
 
         {
           path: "trainers",
           element: <TrainersPage />,
+        },
+        {
+          path: "trainers/new",
+          element: <CreateTrainerPage />,
+        },
+        {
+          path: "trainers/:id",
+          element: <TrainerDetailsPage />,
+        },
+        {
+          path: "trainers/:id/edit",
+          element: <TrainerEditPage />,
         },
 
         {
@@ -173,6 +261,10 @@ export const appRoutes: RouteObject = {
         {
           path: "payments",
           element: <PaymentsPage />,
+        },
+        {
+          path: "payments/verify",
+          element: <PaymentVerificationPage />,
         },
 
         {
